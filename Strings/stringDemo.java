@@ -1,0 +1,54 @@
+package Strings;
+
+import java.util.Scanner;
+
+public class stringDemo {
+	static Scanner scn = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		// PART - 1
+		String str = "Hello"; // Declaring a string
+//		str = "bye";
+		System.out.println(str); // printing the whole string
+		// Iterating through the string
+//		for(int i = 0; i<str.length();i++) { 
+//			System.out.println(str.charAt(i));
+//		}
+
+		// PART - 2
+		System.out.println(str.charAt(0));
+		System.out.println(str.charAt(1));
+		System.out.println(str.charAt(2));
+		System.out.println(str.charAt(3));
+		System.out.println(str.charAt(4));
+//		System.out.println(str.charAt(5)); // StringIndexOutofBoundsException
+
+		// PART - 3
+		System.out.println(str.substring(2, 4));
+		System.out.println(str.substring(2, 5));
+		System.out.println(str.substring(3, 3));
+		System.out.println(str.substring(0, 3));
+
+		System.out.println(str.substring(3));
+
+		// PART - 4 = Concatenation
+		String s1 = "hi";
+		String s2 = "bye";
+		String s3 = s1 + s2;
+		System.out.println(s3);
+		String s4 = s1.concat(s2);
+		System.out.println(s4);
+//		String s5  = s1+1;
+//		System.out.println(s5);
+
+		// PART - 5 = indexOf
+		System.out.println(str.indexOf("el")); // 1 - returns index of e
+		System.out.println(str.indexOf("ello")); // 1 - returns index of e
+		System.out.println(str.indexOf("lol")); // -1 because subString not present in the string
+
+		// PART - 6 = startsWith - returns true if the str starts with the given params
+		System.out.println(str.startsWith("he")); // false
+		System.out.println(str.startsWith("He")); // true
+	}
+
+}

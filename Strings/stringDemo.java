@@ -9,11 +9,7 @@ public class stringDemo {
 		// PART - 1
 		String str = "Hello"; // Declaring a string
 //		str = "bye";
-		System.out.println(str); // printing the whole string
-		// Iterating through the string
-//		for(int i = 0; i<str.length();i++) { 
-//			System.out.println(str.charAt(i));
-//		}
+		System.out.println(str); 
 
 		// PART - 2
 		System.out.println(str.charAt(0));
@@ -59,6 +55,7 @@ public class stringDemo {
 		System.out.println((s1 == s2)+ ","+ s1.equals(s2)); // true true
 		System.out.println((s1 == s3) + "," + s1.equals(s3)); // true true
 		System.out.println((s1 == s4) + "," + s1.equals(s4)); // false true	
+		
 	}
 
 }

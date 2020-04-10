@@ -49,6 +49,16 @@ public class stringDemo {
 		// PART - 6 = startsWith - returns true if the str starts with the given params
 		System.out.println(str.startsWith("he")); // false
 		System.out.println(str.startsWith("He")); // true
+
+		// PART - 7 = (== and equals());
+		s1 = "Hello";
+		s2 = s1;
+		s3 = "Hello";
+		s4 = new String("Hello");
+
+		System.out.println((s1 == s2)+ ","+ s1.equals(s2)); // true true
+		System.out.println((s1 == s3) + "," + s1.equals(s3)); // true true
+		System.out.println((s1 == s4) + "," + s1.equals(s4)); // false true	
 	}
 
 }

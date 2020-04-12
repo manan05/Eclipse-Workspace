@@ -27,6 +27,10 @@ public class stringBuilderDemo {
 		//Update the value at a particular index
 		sb.setCharAt(4, 'd');
 		System.out.println(sb);
+		
+		//ranges
+		sb.insert(sb.length(), 'c');
+		System.out.println(sb);
 
 	}
 

@@ -29,10 +29,13 @@ public class arrayListDemo {
 		int[] one = { 10, 10, 20, 40, 40, 50, 50 };
 		int[] two = { 10, 10, 10, 30, 40, 50, 50, 50, 60, 60 };
 //		System.out.println(Intersection(one, two));
+
+		int[] a = { 8, 6, 7, 5 };
+		int[] b = { 9, 5, 4, 1, 9 };
+//		System.out.println(sum(a, b));
 		
-		int[] a = {8,6,7,5};
-		int[] b = {9,5,4,1,9};
-		System.out.println(sum(a, b));
+		int[] arr012 = {0,2,1,2,0,1,2,1,1,0};
+		System.out.println(sort012(arr012));
 
 	}
 
@@ -56,8 +59,8 @@ public class arrayListDemo {
 	public static ArrayList<Integer> sum(int[] one, int[] two) {
 
 		ArrayList<Integer> ans = new ArrayList<Integer>();
-		int i = one.length - 1; //i = last element of one
-		int j = two.length - 1; //j = last element of two
+		int i = one.length - 1; // i = last element of one
+		int j = two.length - 1; // j = last element of two
 		int carry = 0; // initially 0
 		while (i >= 0 || j >= 0) {
 			int sum = carry; // initially making sum as carry
@@ -71,10 +74,30 @@ public class arrayListDemo {
 			i--;
 			j--;
 		}
-		if (carry != 0) { // if loop ends and there is still carry left, we add carry at the start 
+		if (carry != 0) { // if loop ends and there is still carry left, we add carry at the start
 			ans.add(0, carry);
 		}
 
+		return ans;
+	}
+
+	public static ArrayList<Integer> sort012(int[] arr) {
+		ArrayList<Integer> ans = new ArrayList<Integer>();
+		
+		int count = 0;
+		for (int i = 0; i < arr.length; i++) {
+			if(arr[i] == 0) {
+				ans.add(0,arr[i]);
+				count++;
+			}
+			if(arr[i] ==1) {
+				ans.add(count,arr[i]);
+			}
+			if(arr[i] == 2) {
+				ans.add(arr[i]);
+			}
+			
+		}
 		return ans;
 	}
 

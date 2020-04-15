@@ -28,7 +28,11 @@ public class arrayListDemo {
 
 		int[] one = { 10, 10, 20, 40, 40, 50, 50 };
 		int[] two = { 10, 10, 10, 30, 40, 50, 50, 50, 60, 60 };
-		System.out.println(Intersection(one, two));
+//		System.out.println(Intersection(one, two));
+		
+		int[] a = {8,6,7,5};
+		int[] b = {9,5,4,1,9};
+		System.out.println(sum(a, b));
 
 	}
 
@@ -47,6 +51,31 @@ public class arrayListDemo {
 		}
 		return ans;
 
+	}
+
+	public static ArrayList<Integer> sum(int[] one, int[] two) {
+
+		ArrayList<Integer> ans = new ArrayList<Integer>();
+		int i = one.length - 1; //i = last element of one
+		int j = two.length - 1; //j = last element of two
+		int carry = 0; // initially 0
+		while (i >= 0 || j >= 0) {
+			int sum = carry; // initially making sum as carry
+			if (i >= 0) // so that if i ends and we still try to access element at -1
+				sum += one[i];
+			if (j >= 0) // so that if j ends and we still try to access element at -1
+				sum += two[j];
+			int rem = sum % 10;
+			ans.add(0, rem); // otherwise remainder will add on back, but we want it on front
+			carry = sum / 10;
+			i--;
+			j--;
+		}
+		if (carry != 0) { // if loop ends and there is still carry left, we add carry at the start 
+			ans.add(0, carry);
+		}
+
+		return ans;
 	}
 
 }

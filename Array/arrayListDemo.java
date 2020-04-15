@@ -25,8 +25,11 @@ public class arrayListDemo {
 //		// [10,20,30]
 //		System.out.println(list.size());
 //		// 3
-		
-		int[] one = {10,10,20,40,40,50,50};
+
+		int[] one = { 10, 10, 20, 40, 40, 50, 50 };
+		int[] two = { 10, 10, 10, 30, 40, 50, 50, 50, 60, 60 };
+		System.out.println(Intersection(one, two));
+
 	}
 
 	public static ArrayList<Integer> Intersection(int[] one, int[] two) {
@@ -38,8 +41,7 @@ public class arrayListDemo {
 				j++;
 			} else if (one[i] > two[j]) {
 				j++;
-			}
-			else {
+			} else {
 				i++;
 			}
 		}

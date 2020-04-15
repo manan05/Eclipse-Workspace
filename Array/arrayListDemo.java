@@ -34,7 +34,7 @@ public class arrayListDemo {
 		int[] b = { 9, 5, 4, 1, 9 };
 //		System.out.println(sum(a, b));
 		
-		int[] arr012 = {0,2,1,2,0,1,2,1,1,0};
+		int[] arr012 = {0,0,1,2,2,1,0,1,2,1,0,1};
 		System.out.println(sort012(arr012));
 
 	}
@@ -83,18 +83,17 @@ public class arrayListDemo {
 
 	public static ArrayList<Integer> sort012(int[] arr) {
 		ArrayList<Integer> ans = new ArrayList<Integer>();
-		
-		int count = 0;
-		for (int i = 0; i < arr.length; i++) {
+		int count = 0; //initially count is 0
+		for (int i = 0; i < arr.length; i++) { // only single loop to traverse through the array
 			if(arr[i] == 0) {
-				ans.add(0,arr[i]);
-				count++;
+				ans.add(0,arr[i]); // adding elem at beginning
+				count++; //increment count
 			}
 			if(arr[i] ==1) {
-				ans.add(count,arr[i]);
+				ans.add(count,arr[i]); // adding at count so that 1 always stays in the middle
 			}
 			if(arr[i] == 2) {
-				ans.add(arr[i]);
+				ans.add(arr[i]); // by default add fn adds elem at ending
 			}
 			
 		}

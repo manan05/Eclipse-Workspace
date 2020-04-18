@@ -11,11 +11,11 @@ public class stringOperations {
 //		System.out.println(checkPalindrome("aabbaa"));
 //		subStrings("nitin");
 //		palindrome_ss("nitin");
-//		String str = "1+2*3-20";
+		String str = "1+2*3-20";
 //		String str1 = "abc";
-//		System.out.println(reverse_mathEquation(str));
-		String space = "The Sky is Blue";
-		System.out.println(reverseSpace(space));
+		System.out.println(reverse_mathEquation(str));
+//		String space = "The Sky is Blue";
+//		System.out.println(reverseSpace(space));
 
 	}
 
@@ -60,17 +60,18 @@ public class stringOperations {
 
 	public static String reverse_mathEquation(String str) {
 		String ans = "";
-		int count = str.length()-1;
+		String temp = "";
 		for (int i = 0; i < str.length(); i++) {
 			if (str.charAt(i) == '+' || str.charAt(i) == '/' 
-					|| str.charAt(i) == '-' || str.charAt(i) == '*') {
-				count --;
-						
+					|| str.charAt(i) == '-' || str.charAt(i) == '*') {			
+				ans = str.charAt(i) + temp + ans;
+				temp = "";
 			}
-			ans = str.substring(count);
-				
-
+			else {
+				temp += str.charAt(i);
+			}
 		}
+		ans = temp + ans;
 		return ans;
 	}
 	public static String reverseSpace(String str) {

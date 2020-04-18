@@ -9,7 +9,9 @@ public class stringOperations {
 //		String str = scn.nextLine();
 //		printChars(str);
 //		System.out.println(checkPalindrome("aabbaa"));
-		subStrings("abcd");
+//		subStrings("nitin");
+		palindrome_ss("nitin");
+		
 	}
 
 	public static void printChars(String str) {
@@ -36,6 +38,17 @@ public class stringOperations {
 		for(int si = 0; si<str.length();si++) {
 			for(int ei = si+1; ei<=str.length();ei++) {
 				System.out.println(str.substring(si, ei));
+			}
+		}
+	}
+	
+	public static void palindrome_ss(String str) {
+		for(int si = 0; si<str.length();si++) {
+			for(int ei=si+1; ei<=str.length();ei++) {
+				String check = str.substring(si,ei);
+				if(checkPalindrome(check)) {
+					System.out.println(check);
+				}
 			}
 		}
 	}

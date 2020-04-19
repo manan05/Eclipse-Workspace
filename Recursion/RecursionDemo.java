@@ -4,7 +4,8 @@ public class RecursionDemo {
 
 	public static void main(String[] args) {
 //		printDec(5);
-		printInc(5);
+//		printInc(5);
+		printDecInc(5);
 	}
 
 	public static void printDec(int n) {
@@ -32,6 +33,38 @@ public class RecursionDemo {
 		printInc(n - 1);
 
 		// Self Work
+		System.out.println(n);
+	}
+	
+	public static void printDecInc(int n) {
+		//Base Case
+		if(n == 0) {
+			return;
+		}
+		
+		//Self Work
+		System.out.println(n);
+		
+		//Smaller Input
+		printDecInc(n-1);
+		
+		//Self Work
+		System.out.println(n);
+	}
+	
+	public static void print_53124(int n) {
+		//base case
+		if(n == 0 ) {
+			return;
+		}
+		
+		//self work
+		System.out.println(n);
+		
+		//Smaller Input
+		print_53124(n-2);
+		
+		//self work
 		System.out.println(n);
 	}
 

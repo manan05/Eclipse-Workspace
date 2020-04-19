@@ -6,7 +6,7 @@ public class RecursionDemo {
 //		printDec(5);
 //		printInc(5);
 //		printDecInc(5);
-		PDI_withSkips(5);
+		PDI_withSkips(8);
 
 	}
 

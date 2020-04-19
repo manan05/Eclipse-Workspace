@@ -55,6 +55,13 @@ public class RecursionDemo {
 	}
 
 	public static void PDI_withSkips(int n) {
+		// for input = 5 
+		// Required Output = 
+		// 5
+		// 3
+		// 1
+		// 2
+		// 4	
 		// base case
 		if (n <= 0) {
 			return;

@@ -98,5 +98,22 @@ public class RecursionDemo {
 		
 	}
 	
-
+	public static int power(int x,int n) {
+		//x remains same
+		//pownm1 = power of n minus 1
+		//pown = power of n
+		
+		//Base case
+		if(n == 0) {
+			return 1;
+		}
+		
+		//Smaller Input
+		int pownm1 = power(x,n-1);
+		
+		//self work
+		int pown = pownm1 * x;
+		return pown;
+	}
+	
 }

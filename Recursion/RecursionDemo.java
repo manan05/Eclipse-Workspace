@@ -6,7 +6,8 @@ public class RecursionDemo {
 //		printDec(5);
 //		printInc(5);
 //		printDecInc(5);
-		
+		PDI_withSkips(5);
+
 	}
 
 	public static void printDec(int n) {
@@ -36,23 +37,39 @@ public class RecursionDemo {
 		// Self Work
 		System.out.println(n);
 	}
-	
+
 	public static void printDecInc(int n) {
-		//Base Case
-		if(n == 0) {
+		// Base Case
+		if (n == 0) {
 			return;
 		}
-		
-		//Self Work
+
+		// Self Work
 		System.out.println(n);
-		
-		//Smaller Input
-		printDecInc(n-1);
-		
-		//Self Work
+
+		// Smaller Input
+		printDecInc(n - 1);
+
+		// Self Work
 		System.out.println(n);
 	}
-	
-	
+
+	public static void PDI_withSkips(int n) {
+		// base case
+		if (n <= 0) {
+			return;
+		}
+
+		// self work
+		if (n % 2 != 0)
+			System.out.println(n);
+
+		// Smaller Input
+		PDI_withSkips(n-1);
+
+		// self work
+		if (n % 2 == 0)
+			System.out.println(n);
+	}
 
 }

@@ -117,6 +117,11 @@ public class RecursionDemo {
 	}
 	
 	public static int fibonacci(int n) {
+		//returns nth fibonacci term
+		//tnm1 = term n minus 1
+		//tnm2 = term n minus 2
+		//tn = term n
+		
 		//Base case
 		if(n == 0) {
 			return 0;

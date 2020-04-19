@@ -8,8 +8,8 @@ public class RecursionDemo {
 //		printDecInc(5);
 //		PDI_withSkips(8);
 //		System.out.println(factorial(5));
-		System.out.println(power(2,5));
-
+//		System.out.println(power(2,5));
+		System.out.println(fibonacci(8));
 	}
 
 	public static void printDec(int n) {
@@ -114,6 +114,24 @@ public class RecursionDemo {
 		//self work
 		int pown = pownm1 * x;
 		return pown;
+	}
+	
+	public static int fibonacci(int n) {
+		//Base case
+		if(n == 0) {
+			return 0;
+		}
+		if(n == 1) {
+			return 1;
+		}
+		
+		//Small Input
+		int tnm1 = fibonacci(n-1);
+		int tnm2 = fibonacci(n-2);
+		
+		//Self Work
+		int tn = tnm1 + tnm2;
+		return tn;
 	}
 	
 }

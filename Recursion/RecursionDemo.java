@@ -8,6 +8,8 @@ public class RecursionDemo {
 	}
 	public static void printDec(int n) {
 		//Base Case
+		//-gets StackOverflow Error that means
+		//-base case not handled properly
 		if(n == 0) {
 			return;
 		}

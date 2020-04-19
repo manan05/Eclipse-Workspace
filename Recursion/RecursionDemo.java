@@ -6,7 +6,9 @@ public class RecursionDemo {
 //		printDec(5);
 //		printInc(5);
 //		printDecInc(5);
-		PDI_withSkips(8);
+//		PDI_withSkips(8);
+//		System.out.println(factorial(5));
+		System.out.println(power(2,5));
 
 	}
 
@@ -78,5 +80,23 @@ public class RecursionDemo {
 		if (n % 2 == 0)
 			System.out.println(n);
 	}
+	
+	public static int factorial(int n) {
+		//here fnm1 = factorial of n minus 1
+		//and fn = factorial of n ;
+		//Base Case
+		if(n == 0) {
+			return 1;//as 0! is 1
+		}
+		
+		//Smaller input
+		int fnm1 = factorial(n-1);
+		
+		//Self Work
+		int fn = fnm1 * n;
+		return fn;
+		
+	}
+	
 
 }

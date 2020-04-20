@@ -11,7 +11,10 @@ public class RecursionDemo {
 //		System.out.println(power(2,5));
 //		System.out.println(fibonacci(8));
 		int[] arr = {2,4,6,8,10,12};
+		System.out.println("displayArray()");
 		displayArray(arr, 0);
+		System.out.println("displayReverseArray()");
+		displayReverseArray(arr, 0);
 		
 	}
 
@@ -155,6 +158,21 @@ public class RecursionDemo {
 		
 		//Smaller input
 		displayArray(arr, vidx+1);
+	}
+	
+	public static void displayReverseArray(int[] arr, int vidx) {
+		//vidx  = virtual index
+		
+		//Base case
+		if(vidx == arr.length) {
+			return;
+		}
+		
+		//Smaller Input
+		displayReverseArray(arr, vidx+1);
+		
+		//Self Work
+		System.out.println(arr[vidx]);
 	}
 	
 }

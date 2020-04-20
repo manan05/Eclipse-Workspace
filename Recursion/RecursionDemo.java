@@ -9,7 +9,10 @@ public class RecursionDemo {
 //		PDI_withSkips(8);
 //		System.out.println(factorial(5));
 //		System.out.println(power(2,5));
-		System.out.println(fibonacci(8));
+//		System.out.println(fibonacci(8));
+		int[] arr = {2,4,6,8,10,12};
+		displayArray(arr, 0);
+		
 	}
 
 	public static void printDec(int n) {
@@ -137,6 +140,21 @@ public class RecursionDemo {
 		//Self Work
 		int tn = tnm1 + tnm2;
 		return tn;
+	}
+	
+	public static void displayArray(int[] arr, int vidx) {
+		// vidx = virtual index
+		
+		//Base Case
+		if(vidx == arr.length) {
+			return;
+		}
+		
+		//Self Work
+		System.out.println(arr[vidx]);
+		
+		//Smaller input
+		displayArray(arr, vidx+1);
 	}
 	
 }

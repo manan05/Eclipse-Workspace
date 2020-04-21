@@ -10,12 +10,13 @@ public class RecursionDemo {
 //		System.out.println(factorial(5));
 //		System.out.println(power(2,5));
 //		System.out.println(fibonacci(8));
-		int[] arr = {2,4,6,8,10,12};
-		System.out.println("displayArray()");
-		displayArray(arr, 0);
-		System.out.println("displayReverseArray()");
-		displayReverseArray(arr, 0);
-		
+		int[] arr = { 2, 4, 6, 8, 10, 12 };
+//		System.out.println("displayArray()");
+//		displayArray(arr, 0);
+//		System.out.println("displayReverseArray()");
+//		displayReverseArray(arr, 0);
+		System.out.println(maxArray(arr, 0));
+
 	}
 
 	public static void printDec(int n) {
@@ -63,13 +64,13 @@ public class RecursionDemo {
 	}
 
 	public static void PDI_withSkips(int n) {
-		// for input = 5 
-		// Required Output = 
+		// for input = 5
+		// Required Output =
 		// 5
 		// 3
 		// 1
 		// 2
-		// 4	
+		// 4
 		// base case
 		if (n <= 0) {
 			return;
@@ -80,99 +81,116 @@ public class RecursionDemo {
 			System.out.println(n);
 
 		// Smaller Input
-		PDI_withSkips(n-1);
+		PDI_withSkips(n - 1);
 
 		// self work
 		if (n % 2 == 0)
 			System.out.println(n);
 	}
-	
+
 	public static int factorial(int n) {
-		//here fnm1 = factorial of n minus 1
-		//and fn = factorial of n ;
-		//Base Case
-		if(n == 0) {
-			return 1;//as 0! is 1
+		// here fnm1 = factorial of n minus 1
+		// and fn = factorial of n ;
+		// Base Case
+		if (n == 0) {
+			return 1;// as 0! is 1
 		}
-		
-		//Smaller input
-		int fnm1 = factorial(n-1);
-		
-		//Self Work
+
+		// Smaller input
+		int fnm1 = factorial(n - 1);
+
+		// Self Work
 		int fn = fnm1 * n;
 		return fn;
-		
+
 	}
-	
-	public static int power(int x,int n) {
-		//x remains same
-		//pownm1 = power of n minus 1
-		//pown = power of n
-		
-		//Base case
-		if(n == 0) {
+
+	public static int power(int x, int n) {
+		// x remains same
+		// pownm1 = power of n minus 1
+		// pown = power of n
+
+		// Base case
+		if (n == 0) {
 			return 1;
 		}
-		
-		//Smaller Input
-		int pownm1 = power(x,n-1);
-		
-		//self work
+
+		// Smaller Input
+		int pownm1 = power(x, n - 1);
+
+		// self work
 		int pown = pownm1 * x;
 		return pown;
 	}
-	
+
 	public static int fibonacci(int n) {
-		//returns nth fibonacci term
-		//tnm1 = term n minus 1
-		//tnm2 = term n minus 2
-		//tn = term n
-		
-		//Base case
-		if(n == 0) {
+		// returns nth fibonacci term
+		// tnm1 = term n minus 1
+		// tnm2 = term n minus 2
+		// tn = term n
+
+		// Base case
+		if (n == 0) {
 			return 0;
 		}
-		if(n == 1) {
+		if (n == 1) {
 			return 1;
 		}
-		
-		//Small Input
-		int tnm1 = fibonacci(n-1);
-		int tnm2 = fibonacci(n-2);
-		
-		//Self Work
+
+		// Small Input
+		int tnm1 = fibonacci(n - 1);
+		int tnm2 = fibonacci(n - 2);
+
+		// Self Work
 		int tn = tnm1 + tnm2;
 		return tn;
 	}
-	
+
 	public static void displayArray(int[] arr, int vidx) {
 		// vidx = virtual index
-		
-		//Base Case
-		if(vidx == arr.length) {
+
+		// Base Case
+		if (vidx == arr.length) {
 			return;
 		}
-		
-		//Self Work
+
+		// Self Work
 		System.out.println(arr[vidx]);
-		
-		//Smaller input
-		displayArray(arr, vidx+1);
+
+		// Smaller input
+		displayArray(arr, vidx + 1);
 	}
-	
+
 	public static void displayReverseArray(int[] arr, int vidx) {
-		//vidx  = virtual index
-		
-		//Base case
-		if(vidx == arr.length) {
+		// vidx = virtual index
+
+		// Base case
+		if (vidx == arr.length) {
 			return;
 		}
-		
-		//Smaller Input
-		displayReverseArray(arr, vidx+1);
-		
-		//Self Work
+
+		// Smaller Input
+		displayReverseArray(arr, vidx + 1);
+
+		// Self Work
 		System.out.println(arr[vidx]);
 	}
-	
+
+	public static int maxArray(int[] arr, int vidx) {
+		// Base case
+		if (vidx == arr.length) {
+			return 0;
+		} 
+		// Self work
+		int max = Integer.MIN_VALUE;
+		if (arr[vidx] > max) {
+			max = arr[vidx];
+		}
+		return max;
+
+		// Smaller input
+		maxArray(arr, vidx + 1);
+
+	}
+
 }

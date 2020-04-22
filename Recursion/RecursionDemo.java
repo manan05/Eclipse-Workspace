@@ -197,15 +197,17 @@ public class RecursionDemo {
 	}
 
 	public static boolean findBoolean(int[] arr, int vidx, int item) {
-		boolean ans;
+		boolean ans;	// to store the answer
 		// Base case
-		if (vidx == arr.length) {
-			return false;
+		if (vidx == arr.length) { 
+			return false; // returns false as no elem is present
 		}
 		// self work
 		if (arr[vidx] == item) {
-			ans = true;
+			ans = true; 
 		}
+		// not having an else condition as it will return false 
+		// even if it was true in the last iteration
 
 		// Smaller Input
 		ans = findBoolean(arr, vidx + 1, item);

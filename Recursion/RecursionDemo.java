@@ -10,7 +10,7 @@ public class RecursionDemo {
 //		System.out.println(factorial(5));
 //		System.out.println(power(2,5));
 //		System.out.println(fibonacci(8));
-		int[] arr = { 2, 4, 6, 8, 10, 12 };
+		int[] arr = { 10, 80, 90, 20, 50, 12 };
 //		System.out.println("displayArray()");
 //		displayArray(arr, 0);
 //		System.out.println("displayReverseArray()");
@@ -179,17 +179,19 @@ public class RecursionDemo {
 	public static int maxArray(int[] arr, int vidx) {
 		// Base case
 		if (vidx == arr.length) {
-			return 0;
-		} 
-		// Self work
-		int max = Integer.MIN_VALUE;
-		if (arr[vidx] > max) {
-			max = arr[vidx];
+			return Integer.MIN_VALUE;
 		}
-		return max;
 
 		// Smaller input
-		maxArray(arr, vidx + 1);
+		int num = maxArray(arr, vidx + 1);
+
+		// Self Work
+
+		if (arr[vidx] > num) {
+			return arr[vidx];
+		} else {
+			return num;
+		}
 
 	}
 

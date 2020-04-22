@@ -15,7 +15,8 @@ public class RecursionDemo {
 //		displayArray(arr, 0);
 //		System.out.println("displayReverseArray()");
 //		displayReverseArray(arr, 0);
-		System.out.println(maxArray(arr, 0));
+//		System.out.println(maxArray(arr, 0));
+		System.out.println(findBoolean(arr, 0, 70));
 
 	}
 
@@ -192,6 +193,24 @@ public class RecursionDemo {
 		} else {
 			return num;
 		}
+
+	}
+
+	public static boolean findBoolean(int[] arr, int vidx, int item) {
+		boolean ans;
+		// Base case
+		if (vidx == arr.length) {
+			return false;
+		}
+		// self work
+		if (arr[vidx] == item) {
+			ans = true;
+		}
+
+		// Smaller Input
+		ans = findBoolean(arr, vidx + 1, item);
+
+		return ans;
 
 	}
 

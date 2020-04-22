@@ -10,13 +10,14 @@ public class RecursionDemo {
 //		System.out.println(factorial(5));
 //		System.out.println(power(2,5));
 //		System.out.println(fibonacci(8));
-		int[] arr = { 10, 80, 90, 20, 50, 12 };
+		int[] arr = { 10, 90, 20, 80, 90, 20, 50, 12 };
 //		System.out.println("displayArray()");
 //		displayArray(arr, 0);
 //		System.out.println("displayReverseArray()");
 //		displayReverseArray(arr, 0);
 //		System.out.println(maxArray(arr, 0));
-		System.out.println(findBoolean(arr, 0, 70));
+//		System.out.println(findBoolean(arr, 0, 70));
+		System.out.println(findFirstIndex(arr, 0, 20));
 
 	}
 
@@ -197,16 +198,16 @@ public class RecursionDemo {
 	}
 
 	public static boolean findBoolean(int[] arr, int vidx, int item) {
-		boolean ans;	// to store the answer
+		boolean ans; // to store the answer
 		// Base case
-		if (vidx == arr.length) { 
+		if (vidx == arr.length) {
 			return false; // returns false as no elem is present
 		}
 		// self work
 		if (arr[vidx] == item) {
-			ans = true; 
+			ans = true;
 		}
-		// not having an else condition as it will return false 
+		// not having an else condition as it will return false
 		// even if it was true in the last iteration
 
 		// Smaller Input
@@ -214,6 +215,23 @@ public class RecursionDemo {
 
 		return ans;
 
+	}
+
+	public static int findFirstIndex(int[] arr, int vidx, int item) {
+		// base case
+		if (vidx == arr.length) {
+			return -1;
+		}
+
+		// self work
+		if (arr[vidx] == item) {
+			return vidx;
+		}
+
+		// Smaller Input
+		int ans = findFirstIndex(arr, vidx + 1, item);
+
+		return ans;
 	}
 
 }

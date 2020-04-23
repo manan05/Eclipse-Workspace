@@ -17,7 +17,8 @@ public class RecursionDemo {
 //		displayReverseArray(arr, 0);
 //		System.out.println(maxArray(arr, 0));
 //		System.out.println(findBoolean(arr, 0, 70));
-		System.out.println(findFirstIndex(arr, 0, 20));
+//		System.out.println(findFirstIndex(arr, 0, 20));
+		System.out.println(findLastIndex(arr, 0, 90));
 
 	}
 
@@ -232,6 +233,22 @@ public class RecursionDemo {
 		int ans = findFirstIndex(arr, vidx + 1, item);
 
 		return ans;
+	}
+
+	public static int findLastIndex(int[] arr, int vidx, int item) {
+		// Base case
+		if (vidx == arr.length) {
+			return -1;
+		}
+
+		// Smaller Input
+		int ans = findLastIndex(arr, vidx + 1, item);
+
+		// self work
+		if (ans == -1 && arr[vidx] == item) { //first time 10 is found
+			return vidx;
+		} else
+			return ans;
 	}
 
 }

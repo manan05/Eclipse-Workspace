@@ -11,6 +11,7 @@ public class RecursionDemo {
 //		System.out.println(power(2,5));
 //		System.out.println(fibonacci(8));
 		int[] arr = { 10, 90, 20, 80, 90, 20, 50, 12 };
+		int[] arr2 = { 5, 10, 65, 52, 10, 4, 85, 10, 45 };
 //		System.out.println("displayArray()");
 //		displayArray(arr, 0);
 //		System.out.println("displayReverseArray()");
@@ -18,8 +19,8 @@ public class RecursionDemo {
 //		System.out.println(maxArray(arr, 0));
 //		System.out.println(findBoolean(arr, 0, 70));
 //		System.out.println(findFirstIndex(arr, 0, 20));
-		System.out.println(findLastIndex(arr, 0, 90));
-
+//		System.out.println(findLastIndex(arr, 0, 90));
+		int[] ans = findAllIndex(arr2, 0, 10, 0);
 	}
 
 	public static void printDec(int n) {
@@ -245,10 +246,32 @@ public class RecursionDemo {
 		int ans = findLastIndex(arr, vidx + 1, item);
 
 		// self work
-		if (ans == -1 && arr[vidx] == item) { //first time 10 is found
+		if (ans == -1 && arr[vidx] == item) { // first time 10 is found
 			return vidx;
 		} else
 			return ans;
+	}
+
+	public static int[] findAllIndex(int[] arr, int vidx, int item, int count) {
+		// Base case
+		if (arr.length == vidx) {
+			int[] baseResult = new int[count];
+			return baseResult;
+		}
+		if (arr[vidx] == count) {
+			// Smaller Input
+			int[] ra = findAllIndex(arr, vidx + 1, item, count + 1);
+			ra[count] = vidx;
+			return ra;
+			// Self Work
+		} else {
+			// Smaller Input
+			int[] ra = findAllIndex(arr, vidx + 1, item, count);
+			return ra;
+			// Self Work
+
+		}
+
 	}
 
 }

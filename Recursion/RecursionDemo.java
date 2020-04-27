@@ -21,6 +21,7 @@ public class RecursionDemo {
 //		System.out.println(findFirstIndex(arr, 0, 20));
 //		System.out.println(findLastIndex(arr, 0, 90));
 		int[] ans = findAllIndex(arr2, 0, 10, 0);
+		displayArray(ans, 0);
 	}
 
 	public static void printDec(int n) {
@@ -258,7 +259,7 @@ public class RecursionDemo {
 			int[] baseResult = new int[count];
 			return baseResult;
 		}
-		if (arr[vidx] == count) {
+		if (arr[vidx] == item) {
 			// Smaller Input
 			int[] ra = findAllIndex(arr, vidx + 1, item, count + 1);
 			ra[count] = vidx;

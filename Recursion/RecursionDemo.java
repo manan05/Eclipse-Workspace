@@ -262,15 +262,18 @@ public class RecursionDemo {
 		if (arr[vidx] == item) {
 			// Smaller Input
 			int[] ra = findAllIndex(arr, vidx + 1, item, count + 1);
+			
+			//self work
 			ra[count] = vidx;
 			return ra;
-			// Self Work
+			
 		} else {
 			// Smaller Input
 			int[] ra = findAllIndex(arr, vidx + 1, item, count);
+			
+			//self work
 			return ra;
-			// Self Work
-
+			
 		}
 
 	}

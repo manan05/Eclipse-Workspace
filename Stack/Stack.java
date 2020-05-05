@@ -41,4 +41,9 @@ public class Stack {
 	public int size() {
 		return this.tos + 1;
 	}
+	
+	//this operation returns true or false if the stack is empty or not
+	public boolean isEmpty() {
+		return (this.size() == 0);
+	}
 }

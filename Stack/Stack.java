@@ -61,8 +61,12 @@ public class Stack {
 	
 	// this operation is used to display the stack
 	public void display() {
+		
+		System.out.println("************************");
 		for(int i = this.tos; i>=0;i--) {
-			System.out.println(this.data[i]);
+			System.out.print(this.data[i] + " ");
 		}
+		System.out.println();
+		System.out.println("************************");
 	}
 }

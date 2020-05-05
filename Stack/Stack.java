@@ -58,4 +58,11 @@ public class Stack {
 	public boolean isEmpty() {
 		return (this.size() == 0);
 	}
+	
+	// this operation is used to display the stack
+	public void display() {
+		for(int i = this.tos; i>=0;i--) {
+			System.out.println(this.data[i]);
+		}
+	}
 }

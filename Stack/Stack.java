@@ -18,13 +18,21 @@ public class Stack {
 	}
 
 	// this operation pushes the item into the stack
-	public void push(int item) {
+	public void push(int item) throws Exception {
+		if (this.size() == this.data.length) {
+			throw new Exception("Stack is full;");
+		}
+
 		this.tos++; // increments tos first b/c initially it is -1
 		this.data[this.tos] = item;
 	}
 
 	// this operation pops the item from the stack
-	public int pop() {
+	public int pop() throws Exception {
+		if (this.size() == 0) {
+			throw new Exception("Stack is Empty;");
+		}
+
 		int re = this.data[this.tos]; // saving the element on tos
 		this.data[this.tos] = 0; // making the elem on tos as 0
 		this.tos--; // decrementing tos
@@ -32,17 +40,21 @@ public class Stack {
 	}
 
 	// this operation returns the element on top of the stack
-	public int top() {
+	public int top() throws Exception {
+		if(this.size() == 0) {
+			throw new Exception("Stack is Empty;");
+		}
+		
 		int re = this.data[this.tos];
 		return re;
 	}
-	
-	//this operation returns the size of the stack
+
+	// this operation returns the size of the stack
 	public int size() {
 		return this.tos + 1;
 	}
-	
-	//this operation returns true or false if the stack is empty or not
+
+	// this operation returns true or false if the stack is empty or not
 	public boolean isEmpty() {
 		return (this.size() == 0);
 	}

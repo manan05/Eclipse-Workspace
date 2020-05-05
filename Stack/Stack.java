@@ -1,8 +1,8 @@
 package Stack;
 
 public class Stack {
-	int tos;
-	int[] data;
+	private int tos;
+	private int[] data;
 
 	// default constructor
 	// which in turn calls the parameterized constructor
@@ -23,11 +23,22 @@ public class Stack {
 		this.data[this.tos] = item;
 	}
 
-	// this operation pops the item on tos
+	// this operation pops the item from the stack
 	public int pop() {
-		int re = this.data[this.tos];
-		this.data[this.tos] = 0;
-		this.tos--;
+		int re = this.data[this.tos]; // saving the element on tos
+		this.data[this.tos] = 0; // making the elem on tos as 0
+		this.tos--; // decrementing tos
 		return re;
+	}
+
+	// this operation returns the element on top of the stack
+	public int top() {
+		int re = this.data[this.tos];
+		return re;
+	}
+	
+	//this operation returns the size of the stack
+	public int size() {
+		return this.tos + 1;
 	}
 }

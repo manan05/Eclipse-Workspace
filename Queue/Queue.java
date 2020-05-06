@@ -19,6 +19,8 @@ public class Queue {
 
 	//This method adds elements to the queue
 	public void enqueue(int item) {
+		if()
+		
 		int ni = (this.front + this.size) % this.data.length; //to make the queue circular
 		this.data[ni] = item; 
 		this.size++;

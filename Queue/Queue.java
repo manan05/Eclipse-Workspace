@@ -18,7 +18,12 @@ public class Queue {
 	}
 
 	// This method adds elements to the queue
-	public void enqueue(int item) {
+	public void enqueue(int item) throws Exception{
+		
+		if(this.data.length == this.size) {
+			throw new Exception("Queue is Full!");
+		}
+		
 		// ni = new index
 		int ni = (this.front + this.size) % this.data.length; // to make the queue circular
 		this.data[ni] = item;
@@ -26,7 +31,12 @@ public class Queue {
 	}
 
 	// This method removes element from the queue and displays that elem
-	public int dequeue() {
+	public int dequeue() throws Exception {
+		
+		if(this.size == 0) {
+			throw new Exception("Queue is Empty");
+		}
+		
 		int rv = this.data[this.front]; // rv = return value
 		this.data[this.front] = 0; // set the front value as 0
 		this.front = (this.front + 1) % this.data.length; // to make dequeue circular
@@ -35,7 +45,12 @@ public class Queue {
 	}
 
 	// This method returns the first element of the queue
-	public int getFirst() {
+	public int getFirst() throws Exception { 
+		
+		if(this.size == 0) {
+			throw new Exception("Queue is Empty");
+		}
+		
 		int rv = this.data[this.front]; // rv = return value
 		return rv;
 	}

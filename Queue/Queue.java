@@ -49,4 +49,14 @@ public class Queue {
 	public boolean isEmpty() {
 		return this.size() == 0;
 	}
+
+	public void display() {
+		System.out.println("**********************");
+		for (int i = 0; i < this.data.length; i++) {
+			int idx = (i + this.front) % this.data.length;
+			System.out.print(this.data[idx] + " ");
+		}
+		System.out.println();
+		System.out.println("**********************");
+	}
 }

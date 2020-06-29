@@ -5,73 +5,74 @@ public class Queue {
 	private int size;
 	private int[] data;
 
-	// Parameterized constructor
-	public Queue(int cap) {
-		this.front = 0;
-		this.size = 0;
-		this.data = new int[cap]; // creating a new array with cap as capacity
-	}
-
 	// Default constructor
 	public Queue() {
-		this(5); // calling the parameterized constructor for value 5
+		this.front = 0;
+		this.size = 0;
+		this.data = new int[5];
 	}
 
-	// This method adds elements to the queue
-	public void enqueue(int item) throws Exception{
-		
-		if(this.data.length == this.size) {
-			throw new Exception("Queue is Full!");
+	// Parameterized constructor
+	public Queue(int cap) {
+
+		this.front = 0;
+		this.size = 0;
+		this.data = new int[cap];
+	}
+
+	// Enqueue = used to insert elements in the queue
+	public void enqueue(int item) throws Exception {
+		if(this.size == this.data.length) {
+			throw new Exception("Queue is full.");
 		}
-		
 		// ni = new index
-		int ni = (this.front + this.size) % this.data.length; // to make the queue circular
+		int ni = (this.front + this.size) % this.data.length; // finding modulus to make the enqueue circular
 		this.data[ni] = item;
 		this.size++;
 	}
 
-	// This method removes element from the queue and displays that elem
-	public int dequeue() throws Exception {
-		
+	// Dequeue = used to delete elements in the queue
+	public int dequeue() throws Exception{
 		if(this.size == 0) {
-			throw new Exception("Queue is Empty");
+			throw new Exception("Queue is Empty.");
 		}
-		
-		int rv = this.data[this.front]; // rv = return value
-		this.data[this.front] = 0; // set the front value as 0
-		this.front = (this.front + 1) % this.data.length; // to make dequeue circular
+		// rv = return value
+		int rv = this.data[this.front]; // storing front value in rv
+		this.data[this.front] = 0; // modifying front to 0
+		this.front = (this.front + 1) % this.data.length; // making the dequeue op circular
 		this.size--;
 		return rv;
 	}
 
-	// This method returns the first element of the queue
-	public int getFirst() throws Exception { 
-		
+	// getFirst = Returns the first element of the queue
+	public int getFirst() throws Exception{
 		if(this.size == 0) {
-			throw new Exception("Queue is Empty");
+			throw new Exception("Queue is Empty.");
 		}
 		
-		int rv = this.data[this.front]; // rv = return value
+		// rv = return value
+		int rv = this.data[this.front];
 		return rv;
 	}
 
-	// This method returns the size of the queue
+	// size = Return the size of the queue
 	public int size() {
 		return this.size;
 	}
 
-	// This method returns whether the queue is empty or not
+	// isEmpty = Returns whether the queue is empty or not
 	public boolean isEmpty() {
-		return this.size() == 0;
+		return this.size == 0;
 	}
 
+	// display = Displays the queue
 	public void display() {
-		System.out.println("**********************");
-		for (int i = 0; i < this.data.length; i++) {
+		for (int i = 0; i < this.size; i++) {
 			int idx = (i + this.front) % this.data.length;
-			System.out.print(this.data[idx] + " ");
+			System.out.print(this.data[idx] + ", ");
 		}
-		System.out.println();
-		System.out.println("**********************");
+		System.out.println(" ");
+		System.out.println("****************");
 	}
+
 }

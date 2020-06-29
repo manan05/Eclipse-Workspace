@@ -9,6 +9,7 @@ public class QueueClient {
 		q.enqueue(30);
 		q.enqueue(40);
 		q.enqueue(50);
+//		q.enqueue(60);
 		q.display();
 		
 		System.out.println(q.dequeue());
@@ -19,6 +20,7 @@ public class QueueClient {
 		System.out.println(q.size());
 		System.out.println(q.isEmpty());
 		q.display();
+		q.dequeue();
 	}
 
 }

@@ -1,4 +1,4 @@
-package L11_March10.OOPS_Story3;
+package L10_Mar4.L11_March10.OOPS_Story3;
 
 /**
  * @author Garima Chhikara
@@ -8,14 +8,15 @@ package L11_March10.OOPS_Story3;
 
 public class P {
 
-	int b ;
+	int d = 10 ;
+	int d1 = 100;
 	
-	public final void fun() {
-		System.out.println("P fun");
+	public void fun() {
+		System.out.println("in P fun");
 	}
 	
 
-	public void fun1(int a) {
-		System.out.println("P fun");
+	public void fun1() {
+		System.out.println("in P fun1");
 	}
 }

@@ -16,7 +16,8 @@ public class StudentClient {
 		// Accessing static data members
 		System.out.println(Student.numberOfStudents);
 		
-		
+		// Accessing static function
+		Student.getNumberOfStudents(); 
 	}
 
 }

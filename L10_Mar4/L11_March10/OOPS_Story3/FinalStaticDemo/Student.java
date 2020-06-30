@@ -1,4 +1,4 @@
-package L11_March10.OOPS_Story3.FinalStaticDemo;
+package L10_Mar4.L11_March10.OOPS_Story3.FinalStaticDemo;
 
 /**
  * @author Garima Chhikara
@@ -8,33 +8,25 @@ package L11_March10.OOPS_Story3.FinalStaticDemo;
 
 public class Student {
 
+	// properties of the student class
 	String name;
-	final int rollNo;
+	int rollNo;
+	// numberOfStudents - static because it is a property of the class not every
+	// object of the class
 	static int numberOfStudents;
 
-	public Student(String name) throws Exception {
-		setName(name);
-
+	public void setName(String name) throws Exception {
+		if (this.name == null) {
+			throw new Exception("Name cannot be null.");
+		}
+		this.name = name;
 		numberOfStudents++;
 		this.rollNo = numberOfStudents;
 	}
 
-	// non static can access static data member
-	public void setName(String name) throws Exception {
-
-		if (name == null) {
-			throw new Exception("Name cannot be null");
-		}
-
-		this.name = name;
-		System.out.println(Student.numberOfStudents);
-	}
-
-	// static fxn cannot access this
-	// static fxn cannot access non static data members
-	public static int getNumberOfStudents() {
-		return numberOfStudents;
-
+	// Parameterised constructor
+	public Student(String name) throws Exception {
+		setName(name);
 	}
 
 }

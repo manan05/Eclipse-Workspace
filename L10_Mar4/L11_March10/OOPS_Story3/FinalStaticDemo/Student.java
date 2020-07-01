@@ -26,6 +26,7 @@ public class Student {
 	// Parameterised constructor
 	public Student(String name) throws Exception {
 		setName(name);
+		
 		numberOfStudents++;
 		this.rollNo = numberOfStudents;
 	}

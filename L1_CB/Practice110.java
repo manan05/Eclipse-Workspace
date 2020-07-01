@@ -8,9 +8,8 @@ public class Practice110 {
 		while (nst <= n){
 			int c = 1;
 			while (c <= nst){
-				System.out.print();
-				c=c+1;
-				
+				System.out.print("*");
+				c=c+1;	
 			}
 			nst = nst+1;
 			System.out.println();

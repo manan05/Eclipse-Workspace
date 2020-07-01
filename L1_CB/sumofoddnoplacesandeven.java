@@ -8,7 +8,7 @@ public class sumofoddnoplacesandeven {
 		int N = scn.nextInt();
 		int c = 0;
 		while (c<N){
-			while()
+//			while()
 			
 			
 			

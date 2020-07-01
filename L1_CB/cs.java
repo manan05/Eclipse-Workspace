@@ -1,5 +1,6 @@
 package L1_CB;
 
+import java.util.Scanner;
 
 public class cs {
 

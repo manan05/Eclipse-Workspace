@@ -1,4 +1,4 @@
-package Lecture3;
+package Practice_G4G.Lecture3;
 
 public class FunctionParams {
 

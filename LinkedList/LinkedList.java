@@ -44,7 +44,7 @@ public class LinkedList {
 		// Summary update
 		// because updated at last (added value)
 		// so head doesn't change but tail does
-		
+
 		// initially if adding first item, head and tail both are null so
 		// assigning them both to newNode
 		if (this.size == 0) {
@@ -52,22 +52,22 @@ public class LinkedList {
 			this.tail = newNode;
 			this.size++;
 		}
-		
+
 		// when we add new nodes and size != 0
 		else {
 			this.tail = newNode;
-			this.size++; 
+			this.size++;
 		}
-		
+
 	}
-	
+
 	public void display() {
-		
+
 		System.out.println("-------------------------");
-		
+
 		// creating temporary node that points to the head of the LL
 		Node temp = this.head;
-		while(temp != null) {
+		while (temp != null) {
 			System.out.print(temp.data + " ");
 			temp = temp.next; // becomes null only when at tail
 		}
@@ -75,4 +75,30 @@ public class LinkedList {
 		System.out.println("-------------------------");
 	}
 
+	public void addFirst(int item) {
+		// new Node
+		Node newNode = new Node();
+		
+		// update
+		newNode.data = item;
+		newNode.next = null;
+		
+		// attach
+		
+		newNode.next = this.head;
+		
+		// update summary
+		
+			//because by now list is empty
+		if(this.size == 0) {
+			this.head = newNode;
+			this.tail = newNode;
+			this.size++;
+		}
+		else {
+			this.head = newNode;
+			this.size++;
+		}
+		
+	}
 }

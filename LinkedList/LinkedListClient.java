@@ -15,6 +15,8 @@ public class LinkedListClient {
 		list.addLast(30);
 		list.addLast(40);
 		list.addLast(50);
+		list.addFirst(60);
+		list.addFirst(70);
 		list.display();
 		System.out.println(list.size());
 	}

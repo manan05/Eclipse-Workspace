@@ -7,7 +7,7 @@ package LinkedList;
 
 public class LinkedListClient {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
 		LinkedList list = new LinkedList();
 		list.addLast(10);
@@ -19,5 +19,6 @@ public class LinkedListClient {
 		list.addFirst(70);
 		list.display();
 		System.out.println(list.size());
+		System.out.println(list.getAt(5));;
 	}
 }

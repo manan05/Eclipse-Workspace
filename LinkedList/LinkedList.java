@@ -19,14 +19,18 @@ public class LinkedList {
 	private Node tail; // points at the last node of the LL
 	private int size;
 
+	// returns the size of the LL
 	public int size() {
 		return this.size;
 	}
 
+	// returns t/f if LL is empty or not
 	public boolean isEmpty() {
 		return this.size == 0;
 	}
 
+	// adds an item to the LL at last of the LL
+	// Complexity = O(1)
 	public void addLast(int item) {
 
 		// Create a new node
@@ -61,6 +65,8 @@ public class LinkedList {
 
 	}
 
+	// displays the LL
+	// Complexity = O(n)
 	public void display() {
 
 		System.out.println("-------------------------");
@@ -75,30 +81,70 @@ public class LinkedList {
 		System.out.println("-------------------------");
 	}
 
+	// adds an item at the first of the LL
+	// Complexity = O(1)
 	public void addFirst(int item) {
 		// new Node
 		Node newNode = new Node();
-		
+
 		// update
 		newNode.data = item;
 		newNode.next = null;
-		
+
 		// attach
-		
+
 		newNode.next = this.head;
-		
+
 		// update summary
-		
-			//because by now list is empty
-		if(this.size == 0) {
+
+		// because by now list is empty
+		if (this.size == 0) {
 			this.head = newNode;
 			this.tail = newNode;
 			this.size++;
-		}
-		else {
+		} else {
 			this.head = newNode;
 			this.size++;
 		}
-		
+
 	}
+
+	// returns the item at a given index of the LL
+	public int getAt(int idx) throws Exception{
+		if(idx <0 || idx > this.size){
+			throw new Exception("Index is invalid.");
+		}
+		Node temp = this.head;
+		for(int i = 0; i<idx; i++) {
+			temp = temp.next;
+		}
+		return temp.data;
+	}
+
+	public void addAt(int item, int idx) throws Exception {
+		// adding exception for invalid index
+		if (idx < 0 || idx > size) {
+			throw new Exception("Index is invalid.");
+		}
+
+		// because we have already created addFirst
+		if (idx == 0) {
+			addFirst(item);
+		}
+		// because we have already created addLast
+		else if (idx == this.size) {
+			addLast(item);
+		} else {
+			// new Node
+			Node newNode = new Node();
+
+			// update
+			newNode.data = item;
+			newNode.next = null;
+
+			// attach
+		}
+
+	}
+
 }

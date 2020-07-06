@@ -111,39 +111,39 @@ public class LinkedList {
 
 	// returns the item at a given index of the LL
 	// Complexity = O(n)
-	public int getAt(int idx) throws Exception{
-		if(this.size == 0) {
+	public int getAt(int idx) throws Exception {
+		if (this.size == 0) {
 			throw new Exception("LinkedList is empty.");
 		}
-		
-		if(idx <0 || idx > this.size){
+
+		if (idx < 0 || idx > this.size) {
 			throw new Exception("Index is invalid.");
 		}
 		// making a temp node that points to the head of the LL
 		Node temp = this.head;
 		// loop till idx and at the end of loop value will be the required value
-		for(int i = 0; i<idx; i++) {
+		for (int i = 0; i < idx; i++) {
 			temp = temp.next;
 		}
 		return temp.data;
 	}
-	
+
 	// returns the node at the given index of the LL
 	// Complexity = O(n)
-	private Node getNodeAt(int idx) throws Exception{
-		if(idx < 0 || idx > this.size) {
+	private Node getNodeAt(int idx) throws Exception {
+		if (idx < 0 || idx > this.size) {
 			throw new Exception("Index is invalid.");
 		}
-		
+
 		Node temp = this.head;
-		
-		for(int i = 0; i< idx; i++) {
+
+		for (int i = 0; i < idx; i++) {
 			temp = temp.next;
 		}
 		return temp;
 	}
 
-	// Adds an element item at a given idx 
+	// Adds an element item at a given idx
 	// Complexity = O(n)
 	public void addAt(int item, int idx) throws Exception {
 		// adding exception for invalid index
@@ -167,12 +167,12 @@ public class LinkedList {
 			newNode.next = null;
 
 			// attach
-			Node nodeMinus1 = getNodeAt(idx -1); 
+			Node nodeMinus1 = getNodeAt(idx - 1);
 			Node nodePlus1 = getNodeAt(idx);
-			
+
 			nodeMinus1.next = newNode;
 			newNode.next = nodePlus1;
-			
+
 			this.size++;
 		}
 
@@ -181,19 +181,91 @@ public class LinkedList {
 	// Complexity = O(1)
 	// returns the item kept at first place (head)
 	public int getFirst() throws Exception {
-		if(this.size == 0) {
+		if (this.size == 0) {
 			throw new Exception("LinkedList is empty.");
 		}
 		return this.head.data;
 	}
-	
+
 	// returns the item kept at last place (tail)
 	// Complexity = O(1)
-	public int getLast() throws Exception{
-		if(this.size == 0) {
+	public int getLast() throws Exception {
+		if (this.size == 0) {
 			throw new Exception("LinkedList is empty.");
 		}
 		return this.tail.data;
 	}
-	
+
+	// removes the first element and returns its data
+	// Complexity = o(1)
+	public int removeFirst() throws Exception {
+		if (this.size == 0) {
+			throw new Exception("LinkedList is empty.");
+		}
+		Node temp = this.head;
+
+		if (this.size == 1) {
+			this.head = null;
+			this.tail = null;
+			this.size = 0;
+		} else {
+			this.head = temp.next;
+			this.size--;
+		}
+		return temp.data;
+	}
+
+	// removes the last element and returns its data
+	// Complexity = O(1)
+	public int removeLast() throws Exception {
+		if (this.size == 0) {
+			throw new Exception("LinkedList is empty.");
+		}
+
+		Node temp = this.tail;
+
+		if (this.size == 1) {
+			this.head = null;
+			this.tail = null;
+			this.size = 0;
+		} else {
+			Node sizeMinus2 = getNodeAt(this.size - 2);
+			this.tail = sizeMinus2;
+			this.tail.next = null;
+
+		}
+		return temp.data;
+
+	}
+
+	// removes the element at an idx and returns its data
+	// Complexity = O(n)
+	public int removeAt(int idx) throws Exception {
+		if (this.size == 0) {
+			throw new Exception("LinkedList is empty.");
+		}
+		if (idx < 0 || idx >= this.size) {
+			throw new Exception("Index is invalid.");
+		}
+
+		if (idx == 0) {
+			return this.removeFirst();
+		}
+
+		else if (idx == this.size - 1) {
+			return this.removeLast();
+		} else {
+			Node nodeMinus1 = getNodeAt(idx - 1);
+			Node nodePlus1 = getNodeAt(idx + 1);
+			Node node = getNodeAt(idx);
+
+			nodeMinus1.next = nodePlus1;
+			this.size --;
+			
+			
+			return node.data;
+
+		}
+
+	}
 }

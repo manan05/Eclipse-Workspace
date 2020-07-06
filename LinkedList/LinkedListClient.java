@@ -22,6 +22,8 @@ public class LinkedListClient {
 		System.out.println(list.getAt(5));
 		list.addAt(100, 2);
 		list.display();
+		System.out.println(list.removeFirst());
+		list.display();
 
 	}
 }

@@ -39,7 +39,7 @@ public class LinkedList {
 		// Attach
 		// if head = tail = null then use this condition
 		if (this.size > 0)
-			tail.next = newNode;
+			this.tail.next = newNode;
 
 		// Summary update
 		// because updated at last (added value)

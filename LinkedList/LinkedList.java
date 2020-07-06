@@ -110,17 +110,41 @@ public class LinkedList {
 	}
 
 	// returns the item at a given index of the LL
+	// Complexity = O(n)
 	public int getAt(int idx) throws Exception{
+		if(this.size == 0) {
+			throw new Exception("LinkedList is empty.");
+		}
+		
 		if(idx <0 || idx > this.size){
 			throw new Exception("Index is invalid.");
 		}
+		// making a temp node that points to the head of the LL
 		Node temp = this.head;
+		// loop till idx and at the end of loop value will be the required value
 		for(int i = 0; i<idx; i++) {
 			temp = temp.next;
 		}
 		return temp.data;
 	}
+	
+	// returns the node at the given index of the LL
+	// Complexity = O(n)
+	private Node getNodeAt(int idx) throws Exception{
+		if(idx < 0 || idx > this.size) {
+			throw new Exception("Index is invalid.");
+		}
+		
+		Node temp = this.head;
+		
+		for(int i = 0; i< idx; i++) {
+			temp = temp.next;
+		}
+		return temp;
+	}
 
+	// Adds an element item at a given idx 
+	// Complexity = O(n)
 	public void addAt(int item, int idx) throws Exception {
 		// adding exception for invalid index
 		if (idx < 0 || idx > size) {
@@ -143,8 +167,33 @@ public class LinkedList {
 			newNode.next = null;
 
 			// attach
+			Node nodeMinus1 = getNodeAt(idx -1); 
+			Node nodePlus1 = getNodeAt(idx);
+			
+			nodeMinus1.next = newNode;
+			newNode.next = nodePlus1;
+			
+			this.size++;
 		}
 
 	}
 
+	// Complexity = O(1)
+	// returns the item kept at first place (head)
+	public int getFirst() throws Exception {
+		if(this.size == 0) {
+			throw new Exception("LinkedList is empty.");
+		}
+		return this.head.data;
+	}
+	
+	// returns the item kept at last place (tail)
+	// Complexity = O(1)
+	public int getLast() throws Exception{
+		if(this.size == 0) {
+			throw new Exception("LinkedList is empty.");
+		}
+		return this.tail.data;
+	}
+	
 }

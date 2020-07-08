@@ -237,6 +237,7 @@ public class LinkedList {
 		return temp.data;
 
 	}
+	
 
 	// removes the element at an idx and returns its data
 	// Complexity = O(n)

@@ -17,6 +17,7 @@ public class DSClient {
 		ds.push(50);
 		ds.push(60);
 		ds.push(70);
+		ds.push(80);
 		ds.display();
 	}
 }

@@ -2,7 +2,7 @@ package Stack;
 
 public class Stack {
 	private int tos;
-	private int[] data;
+	public int[] data;
 
 	// default constructor
 	// which in turn calls the parameterized constructor

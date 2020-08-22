@@ -31,7 +31,7 @@ public class StackSpanQuestion extends Stack{
 			while(!stack.isEmpty() && price[i] >price[stack.top()]) {
 				stack.pop();
 			}
-			 
+			
 			if(stack.isEmpty()) {
 				span[i] = i+1;
 			}
@@ -40,6 +40,7 @@ public class StackSpanQuestion extends Stack{
 			}
 			stack.push(i);
 		}
+		return span;
 		
 	}
 

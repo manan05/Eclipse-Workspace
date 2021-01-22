@@ -3,7 +3,7 @@ package DS;
 public class CountPrimeSieve {
 
 	public static void main(String[] args) {
-		System.out.println(countPrimes(20));
+		System.out.println(countPrimes(2));
 
 	}
 

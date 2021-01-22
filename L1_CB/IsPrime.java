@@ -1,4 +1,7 @@
 package L1_CB;
+
+import java.util.Scanner;
+
 public class IsPrime {
 
 	public static void main(String[] args) {

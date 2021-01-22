@@ -1,19 +1,19 @@
-package L11_March10.OOPS_Story3;
+package L10_Mar4.L11_March10.OOPS_Story3;
 
-/**
- * @author Garima Chhikara
- * @email garima.chhikara@codingblocks.com
- * @date 10-Mar-2018
- */
 
+// because C extends P all the functions/ properties of P are in C 
 public class C extends P {
 
+	int d = 20;
+	int d2 = 200;
+	
 	public void fun2() {
-		System.out.println("C fun2");
-		super.fun();
+		System.out.println("in C fun2");
+		
 	}
 	
-	public void fun1(int a, int b) {
-		System.out.println("C fun1");
+	public void fun() {
+		System.out.println("in C fun");
+//		super.fun(); // if You want to call the fun of parent class
 	}
 }

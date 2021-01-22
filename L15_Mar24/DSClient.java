@@ -7,14 +7,14 @@ public class DSClient {
 	public static void main(String[] args) throws Exception {
 
 		Dynamic_stack ds = new Dynamic_stack();
-		// ds.push(10);
-		// ds.push(20);
-		// ds.push(30);
-		// ds.push(40);
-		// ds.push(50);
-		// ds.push(60);
-		// ds.push(70);
-		// ds.display();
+		 ds.push(10);
+		 ds.push(20);
+		 ds.push(30);
+		 ds.push(40);
+		 ds.push(50);
+		 ds.push(60);
+		 ds.push(70);
+		 ds.display();
 		int[] price = { 6, 3, 10, 8, 7, 12, 5, 4, 11, 9 };
 		int [] z = stock(price);
 		for (int i:z){

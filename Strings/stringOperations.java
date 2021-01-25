@@ -9,11 +9,11 @@ public class stringOperations {
 //		String str = scn.nextLine();
 //		printChars(str);
 //		System.out.println(checkPalindrome("aabbaa"));
-//		subStrings("nitin");
+		subStrings("nitin");
 //		palindrome_ss("nitin");
 		String str = "1+2*3-20";
 //		String str1 = "abc";
-		System.out.println(reverse_mathEquation(str));
+//		System.out.println(reverse_mathEquation(str));
 //		String space = "The Sky is Blue";
 //		System.out.println(reverseSpace(space));
 

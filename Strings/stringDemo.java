@@ -35,9 +35,8 @@ public class stringDemo {
 		System.out.println(s3);
 		String s4 = s1.concat(s2);
 		System.out.println(s4);
-		String s5  = s1+1;
-		System.out.println(s5);
-
+//		String s5  = s1+1;
+//		System.out.println(s5);
 		// PART - 5 = indexOf
 		System.out.println(str.indexOf("el")); // 1 - returns index of e
 		System.out.println(str.indexOf("ello")); // 1 - returns index of e

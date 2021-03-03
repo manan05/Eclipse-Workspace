@@ -8,7 +8,7 @@ public class countWordsString {
 //		String str = scn.nextLine();
 		int count = 0;
 		String str =  
-		          "One two       three\n four\tfive "; 
+		          "One two       three\n four\t five "; 
 		System.out.println("No of words : " + 
 		           countWords(str)); 
 
@@ -22,5 +22,4 @@ public class countWordsString {
 		return words.length;
 	}
 	
-
 }

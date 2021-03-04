@@ -8,7 +8,7 @@ public class countWordsString {
 //		String str = scn.nextLine();
 		int count = 0;
 		String str =  
-		          "One two       three\n four\tfive "; 
+		          "Hello this is manan arora. How are you? "; 
 		System.out.println("No of words : " + 
 		           countWords(str)); 
 

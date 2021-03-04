@@ -3,7 +3,6 @@ package wipro_prep;
 import java.util.Arrays;
 import java.util.Scanner;
 
-
 public class DistinctElementsArray {
 
 	public static void main(String[] args) {
@@ -32,6 +31,5 @@ public class DistinctElementsArray {
 			System.out.println(arr[i]);
 		}
 	}
-	
 
 }

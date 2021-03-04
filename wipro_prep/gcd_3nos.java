@@ -8,12 +8,11 @@ public class gcd_3nos {
 		int a = scn.nextInt();
 		int b = scn.nextInt();
 		int c = scn.nextInt();
-		int resAB = gcd2nos(a, b);
-		System.out.println(gcd2nos(resAB, c));
+		int d = gcd2Nos(a,b);
+		System.out.println(gcd2Nos(c, d));
 	}
-
-	public static int gcd2nos(int a, int b) {
-		while(a!=b) {
+	public static int gcd2Nos(int a,int b) {
+		while(a != b) {
 			if(a>b) {
 				a = a-b;
 			}
@@ -23,4 +22,5 @@ public class gcd_3nos {
 		}
 		return a;
 	}
+
 }

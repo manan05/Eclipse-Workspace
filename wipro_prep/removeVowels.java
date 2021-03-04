@@ -3,22 +3,16 @@ package wipro_prep;
 import java.util.Scanner;
 
 public class removeVowels {
-
 	public static void main(String[] args) {
 		Scanner scn = new Scanner(System.in);
 		String str = scn.nextLine();
-//		char[] arr = str.toCharArray();
 		remove(str);
 	}
+
 	public static void remove(String str) {
-		for(int i =0; i<str.length(); i++) {
-			if(str.charAt(i) == 'a' || str.charAt(i)== 'e' || str.charAt(i)== 'i'|| str.charAt(i)== 'o'|| str.charAt(i)== 'u') {
-				continue;
-			}
-			else if(str.charAt(i) == 'A' || str.charAt(i)== 'E' || str.charAt(i)== 'I'|| str.charAt(i)== 'O'|| str.charAt(i)== 'U') {
-				continue;
-			}
-			else {
+		for (int i = 0; i < str.length(); i++) {
+			if (str.charAt(i) != 'a' && str.charAt(i) != 'e' && str.charAt(i) != 'i' && str.charAt(i) != 'o'
+					&& str.charAt(i) != 'u') {
 				System.out.print(str.charAt(i));
 			}
 		}

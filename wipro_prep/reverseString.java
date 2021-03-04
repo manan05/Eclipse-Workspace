@@ -14,8 +14,6 @@ public class reverseString {
 		char[] arr = str.toCharArray();
 		int i = 0;
 		int j = arr.length - 1;
-		str.toUpperCase();
-		System.out.println(str);
 		while (i <= j) {
 			char temp = arr[i];
 			arr[i] = arr[j];

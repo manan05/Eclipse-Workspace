@@ -11,13 +11,8 @@ public class reverseString{
 	public static String reverse(String str) {
 		char[] arr = str.toCharArray();
 		int i = 0;
-<<<<<<< HEAD
 		int j = arr.length-1;
-		while(i<=j) {
-=======
-		int j = arr.length - 1;
 		while (i <= j) {
->>>>>>> 33de7bcf70182756d6ed9ab6cb8eb07e3e43d479
 			char temp = arr[i];
 			arr[i] = arr[j];
 			arr[j] = temp;
